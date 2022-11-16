@@ -5,11 +5,6 @@ A small project to demonstrate the workflow of python's magic/dunder methods in 
 from demo.classes import SpecialClass, NormalClass, timestamped_object_factory, better_timestamped_object_factory
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     timestamped_obj = SpecialClass(name="Max")
