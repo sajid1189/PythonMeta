@@ -2,7 +2,7 @@
 A small project to demonstrate the workflow of python's magic/dunder methods in combination with Meta class.
 """
 
-from demo.classes import SpecialClass, NormalClass, timestamped_object_factory, better_timestamped_object_factory
+from demo.classes import SpecialClass, NormalClass, timestamped_object_factory, better_timestamped_object_factory, DummyClass
 
 
 # Press the green button in the gutter to run the script.
@@ -27,3 +27,7 @@ if __name__ == '__main__':
     another_factory_manufactured_normal_obj = better_timestamped_object_factory(NormalClass, "Empowered", age=55)
     print(f" We successfully accessed the get_name of NormalClass object. Here is it's name:"
           f" {another_factory_manufactured_normal_obj.get_name()}")
+    print(f"Like __call__ of CustomMeta said, SpecialClass will have an attribute and its value is 100. This is {SpecialClass.sticky == 100}")
+    d = DummyClass(x=1)
+    # d does not have attr x since itS __new__ did not call __init__
+    assert hasattr(d, "x") is False
